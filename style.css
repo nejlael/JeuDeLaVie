@@ -1,0 +1,13 @@
+.alive{
+    background-color: red;
+}
+.cells{
+    border: solid pink;
+    width: 2em;
+    height: 2em;
+}
+#gridContainer{
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}

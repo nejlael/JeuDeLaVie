@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <input id="inputCells" type="text">
+
+    <div id="gridContainer">
+
+    </div>
+
+
+    <script>
+
+        
+        const cells = document.getElementById('inputCells');
+
+        cells.addEventListener('input', function(event) {
+            let size = event.target.value;
+        const grid = document.getElementById('gridContainer');
+
+            let gridContainer = document.getElementById('gridContainer');
+
+            gridContainer.innerHTML = ' ';
+
+            for(let i = 0; i < size; i++){
+                for(let j = 0; j < size; j++){
+
+                    let cell = document.createElement('div');
+                    cell.setAttribute('class', 'cells');
+                    cell.setAttribute('id', i + '_' + j)
+                    cell.addEventListener('click' , function(event) {
+                        console.log(event.target);
+                        event.target.classList.toggle('alive' )
+                    } );
+                    gridContainer.append(cell) // pour ajouter la cellule dans le conteneur
+                }
+            }
+
+        });
+
+
+
+    </script>
+</body>
+</html>
